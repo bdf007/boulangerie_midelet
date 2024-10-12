@@ -23,14 +23,14 @@ const Login = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
   // form states
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({ username, password });
+      const res = await login({ email, password });
       if (res.error) toast.error(res.error);
       else {
         toast.success(res.message);
@@ -66,9 +66,9 @@ const Login = () => {
             size="small"
             variant="outlined"
             className="form-control"
-            label="USername"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            label="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-group mb-3">
@@ -99,7 +99,7 @@ const Login = () => {
             className="mb-4"
             variant="contained"
             color="primary"
-            disabled={!username || !password}
+            disabled={!email || !password}
             onClick={handleLogin}
           >
             Submit

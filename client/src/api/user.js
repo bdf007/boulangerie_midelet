@@ -6,7 +6,6 @@ export const register = async ({
   password,
 } = {}) => {
   const user = { username, firstname, lastname, email, password };
-
   try {
     const res = await fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
       method: "POST",
@@ -16,15 +15,14 @@ export const register = async ({
       },
       body: JSON.stringify(user),
     });
-
     return await res.json();
   } catch (error) {
     throw new Error(`Cant register at this time. ${error}`);
   }
 };
 
-export const login = async ({ username, password } = {}) => {
-  const user = { username, password };
+export const login = async ({ email, password } = {}) => {
+  const user = { email, password };
 
   try {
     const res = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
