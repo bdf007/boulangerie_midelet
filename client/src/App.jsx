@@ -10,6 +10,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
 
+// import Components
+import NavBar from "./components/navBar";
+
 // API functions
 import { getUser } from "./api/user";
 
@@ -40,6 +43,8 @@ function App() {
       <Router>
         <UserContext.Provider value={{ user, setUser }}>
           <ToastContainer />
+
+          <NavBar />
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />

@@ -12,7 +12,6 @@ exports.verifyToken = (req, res, next) => {
     // throws an error if the token is invalid or expired
     payload = jwt.verify(accessToken, process.env.JWT_SECRET);
     req._id = payload._id;
-
     next();
   } catch (e) {
     // return req unauthorized error

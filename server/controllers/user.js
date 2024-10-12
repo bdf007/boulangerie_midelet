@@ -105,7 +105,7 @@ exports.getAllUsers = async (req, res) => {
     const users = await User.find({}).exec();
     res.status(200).json(users);
   } catch (err) {
-    return res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: err });
   }
 };
 
