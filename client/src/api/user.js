@@ -48,7 +48,7 @@ export const logout = async () => {
       credentials: "include",
     });
 
-    return await res.json();
+    return res.json();
   } catch (error) {
     console.log(error);
   }

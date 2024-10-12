@@ -4,6 +4,8 @@ import { UserContext } from "./context/UserContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 // import pages
 import Home from "./pages/Home";
@@ -43,7 +45,6 @@ function App() {
       <Router>
         <UserContext.Provider value={{ user, setUser }}>
           <ToastContainer />
-
           <NavBar />
           <Routes>
             <Route path="/login" element={<Login />} />

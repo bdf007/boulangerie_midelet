@@ -11,6 +11,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [logoutMessage, setLogoutMessage] = useState("");
 
   // Check if user is logged in
   useEffect(() => {
@@ -43,7 +44,7 @@ const NavBar = () => {
     e.preventDefault();
     logout()
       .then((res) => {
-        toast.success(res.message);
+        setLogoutMessage(res.message);
         // set user to null
         setUser(null);
         // redirect to login page
@@ -51,6 +52,13 @@ const NavBar = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    if (logoutMessage) {
+      toast.success(logoutMessage); // Affiche le toast si un message est présent
+      setLogoutMessage(""); // Réinitialise le message après l'affichage
+    }
+  }, [logoutMessage]);
 
   return (
     <nav className="navbar navbar-expand-lg ">

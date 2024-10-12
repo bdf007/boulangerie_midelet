@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
@@ -26,17 +26,24 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false); // Nouveau flag pour éviter le double toast
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    // Empêche l'exécution multiple du toast et de la navigation
+    if (isProcessing) return;
+    setIsProcessing(true);
+
     try {
       const res = await login({ email, password });
-      if (res.error) toast.error(res.error);
-      else {
+      if (res.error) {
+        toast.error(res.error);
+      } else {
         toast.success(res.message);
-        // store token in local storage
+
+        // Stocker le token et mettre à jour le contexte utilisateur
         localStorage.setItem("token", res.token);
-        // set user in context
         setUser({
           username: res.user.username,
           role: res.user.role,
@@ -45,11 +52,14 @@ const Login = () => {
           firstname: res.user.firstname,
           lastname: res.user.lastname,
         });
-        // redirect to home page
-        navigate("/");
+
+        // Redirige après un court délai pour s'assurer que le toast est affiché
+        setTimeout(() => navigate("/"), 1000);
       }
     } catch (err) {
-      toast.error(err);
+      toast.error("Erreur de connexion");
+    } finally {
+      setIsProcessing(false); // Réinitialise le flag après l'exécution
     }
   };
 

@@ -48,8 +48,8 @@ exports.userLogin = async (req, res) => {
     const { _id, username, firstname, lastname, email, role } = user;
     return res.json({
       token,
+      message: "Login success",
       user: {
-        message: "Login success",
         _id,
         username,
         firstname,
