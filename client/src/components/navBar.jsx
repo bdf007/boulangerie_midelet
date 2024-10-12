@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { UserContext } from "../context/UserContext";
+import logo from "../assets/logo.png";
 
 // API functions
 import { logout, getUser } from "../api/user";
@@ -55,7 +56,7 @@ const NavBar = () => {
 
   useEffect(() => {
     if (logoutMessage) {
-      toast.success(logoutMessage); // Affiche le toast si un message est présent
+      toast.error(logoutMessage); // Affiche le toast si un message est présent
       setLogoutMessage(""); // Réinitialise le message après l'affichage
     }
   }, [logoutMessage]);
@@ -63,6 +64,9 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          <img src={logo} alt="logo" width="100px" height="100px" />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"

@@ -48,7 +48,7 @@ exports.userLogin = async (req, res) => {
     const { _id, username, firstname, lastname, email, role } = user;
     return res.json({
       token,
-      message: "Login success",
+      // message: "Login success",
       user: {
         _id,
         username,
@@ -66,7 +66,7 @@ exports.userLogin = async (req, res) => {
 // Logout
 exports.userLogout = (req, res) => {
   res.clearCookie("jwt");
-  return res.json({ message: "Logout success" });
+  return res.json({ message: "Vous êtes maintenant déconnecté" });
 };
 
 // get logged in user

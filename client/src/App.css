@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+
+  background-color: #000;
+  color: rgb(248, 207, 2);
 }
 
 .App-logo {
@@ -26,6 +30,25 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* .navbar {
+  background-color: #000;
+
+  color: rgb(248, 207, 2);
+} */
+
+.navbar a,
+.navbar span {
+  color: rgb(248, 207, 2);
+}
+.navbar a:hover,
+.navbar span:hover {
+  color: white;
+}
+
+.navbar-toggler-icon {
+  background-color: rgb(248, 207, 2);
 }
 
 @keyframes App-logo-spin {
