@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../context/UserContext";
 
@@ -7,7 +7,7 @@ const UserInfo = () => {
 
   const getInfoUser = async () => {
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user`, {
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/user`, {
         // headers: {
         //   Authorization: `Bearer ${user.accessToken}`,
         // },
@@ -25,12 +25,12 @@ const UserInfo = () => {
   return (
     user && (
       <div>
-        <h1>User Info</h1>
-        <p>Username: {user.username}</p>
-        <p>First Name: {user.firstname}</p>
-        <p>Last Name: {user.lastname}</p>
-        <p>Email: {user.email}</p>
-        <p>Role: {user.role}</p>
+        <h1>Mes infos</h1>
+        <p>Nom d'utilisateur : {user.username}</p>
+        <p>Prénom : {user.firstname}</p>
+        <p>Nom de famille : {user.lastname}</p>
+        <p>Email : {user.email}</p>
+        <p>Role : {user.role}</p>
       </div>
     )
   );

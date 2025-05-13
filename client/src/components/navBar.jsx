@@ -80,16 +80,16 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/About">
+                A Propos
+              </Link>
+            </li>
             {!user ? (
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/AboutPublic">
                     A propos
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/bibliotheque">
-                    Bibliothéque
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -128,16 +128,6 @@ const NavBar = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/bibliotheque">
-                        Gestion de la Bibliothéque
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/Vinotheque">
-                        Vinotheque
-                      </Link>
-                    </li>
-                    <li className="nav-item">
                       <Link className="nav-link" to="/contact">
                         Gestion des Contact
                       </Link>
@@ -154,65 +144,21 @@ const NavBar = () => {
                     </li>
                   </>
                 )}
-
-                {user.role === "student" && (
-                  <>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/Student">
-                        Mes infos
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/bibliotheque">
-                        Bibliothéque
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/contact">
-                        Contacter mon professeur
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/review">
-                        Avis
-                      </Link>
-                    </li>
-                  </>
-                )}
                 {user.role === "user" && (
                   <>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/User">
+                      <Link className="nav-link" to="/MyInfo">
                         Mes infos
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/bibliotheque">
-                        Bibliothéque
-                      </Link>
-                    </li>
-                    <li className="nav-item">
                       <Link className="nav-link" to="/contact">
-                        Contact le professeur
+                        Contact Mon Boulanger
                       </Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/review">
                         Avis
-                      </Link>
-                    </li>
-                  </>
-                )}
-                {user.role === "AdminVin" && (
-                  <>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/AdminInfo">
-                        Gestion de mes informations
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/Vinotheque">
-                        Vinotheque
                       </Link>
                     </li>
                   </>

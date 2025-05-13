@@ -13,6 +13,8 @@ app.use(compression());
 
 // get the routes
 const userRoutes = require("./routes/user");
+// get the about routes
+const aboutRoutes = require("./routes/about");
 
 // Middleware
 app.use(json({ limit: "50mb" }));
@@ -38,8 +40,11 @@ app.get("/", (req, res) => {
   res.send("API Running smoothly!");
 });
 
-// User the routes
+// User routes
 app.use("/api", userRoutes);
+// About routes
+app.use("/api", aboutRoutes);
+// Handle React routing, return all requests to React app
 
 // serve the react app
 app.get("*", (req, res) => {

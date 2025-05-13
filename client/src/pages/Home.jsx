@@ -1,6 +1,6 @@
 import React from "react";
-import UserInfo from "../components/userInfo";
-import ListOfUSers from "../components/listOfUser";
+// import UserInfo from "../components/userInfo";
+// import ListOfUSers from "../components/listOfUser";
 import logo from "../assets/logo.png";
 
 const Home = () => {
@@ -9,8 +9,8 @@ const Home = () => {
       <h1>Bienvenue</h1>
 
       <img className="img-fluid" src={logo} alt="logo" />
-      <UserInfo />
-      <ListOfUSers />
+      {/* <UserInfo /> */}
+      {/* <ListOfUSers /> */}
     </div>
   );
 };

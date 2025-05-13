@@ -11,6 +11,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
+import MyInfo from "./pages/MyInfo";
+import Admin from "./pages/Admin";
+import About from "./pages/About";
 
 // import Components
 import NavBar from "./components/navBar";
@@ -49,6 +52,13 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            {user && <Route path="/myinfo" element={<MyInfo />} />}
+            {user && (user.role === "admin" || user.role === "superadmin") && (
+              <Route path="/admin" element={<Admin />} />
+            )}
+            <Route path="/about" element={<About />} />
+
+            {/* Add more routes as needed */}
             <Route path="/" element={<Home />} />
           </Routes>
           <ToastContainer />
