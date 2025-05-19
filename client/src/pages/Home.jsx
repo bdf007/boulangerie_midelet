@@ -2,6 +2,7 @@ import React from "react";
 // import UserInfo from "../components/userInfo";
 // import ListOfUSers from "../components/listOfUser";
 import logo from "../assets/logo.png";
+import ReviewCarousel from "../components/reviewCarousel";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <img className="img-fluid" src={logo} alt="logo" />
       {/* <UserInfo /> */}
       {/* <ListOfUSers /> */}
+      <ReviewCarousel />
     </div>
   );
 };

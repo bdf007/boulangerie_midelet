@@ -14,6 +14,7 @@ import Signup from "./pages/SignUp";
 import MyInfo from "./pages/MyInfo";
 import Admin from "./pages/Admin";
 import About from "./pages/About";
+import Review from "./pages/Review";
 
 // import Components
 import NavBar from "./components/navBar";
@@ -57,6 +58,7 @@ function App() {
               <Route path="/admin" element={<Admin />} />
             )}
             <Route path="/about" element={<About />} />
+            <Route path="/review" element={<Review />} />
 
             {/* Add more routes as needed */}
             <Route path="/" element={<Home />} />

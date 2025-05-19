@@ -15,6 +15,8 @@ app.use(compression());
 const userRoutes = require("./routes/user");
 // get the about routes
 const aboutRoutes = require("./routes/about");
+// get the review routes
+const reviewRoutes = require("./routes/review");
 
 // Middleware
 app.use(json({ limit: "50mb" }));
@@ -44,6 +46,9 @@ app.get("/", (req, res) => {
 app.use("/api", userRoutes);
 // About routes
 app.use("/api", aboutRoutes);
+// Review routes
+app.use("/api", reviewRoutes);
+
 // Handle React routing, return all requests to React app
 
 // serve the react app

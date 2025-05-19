@@ -1,6 +1,7 @@
 import React from "react";
 import ListOfUSers from "../components/listOfUser";
 import AboutUploader from "../components/aboutUploader";
+// import AdminReviewManagement from "../components/adminReviewManagement";
 
 const Admin = () => {
   return (
@@ -9,6 +10,8 @@ const Admin = () => {
       <ListOfUSers />
       <h1>Uploader</h1>
       <AboutUploader />
+      <h1>Admin Review Management</h1>
+      {/* <AdminReviewManagement /> */}
     </div>
   );
 };

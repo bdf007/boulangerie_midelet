@@ -80,11 +80,6 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/About">
-                A Propos
-              </Link>
-            </li>
             {!user ? (
               <>
                 <li className="nav-item">
@@ -108,7 +103,7 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/review">
+                  <Link className="nav-link" to="/Review">
                     Avis
                   </Link>
                 </li>
@@ -138,7 +133,7 @@ const NavBar = () => {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/review">
+                      <Link className="nav-link" to="/Review">
                         Gestion des Avis
                       </Link>
                     </li>

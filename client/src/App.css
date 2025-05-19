@@ -1,14 +1,41 @@
-.App {
-  text-align: center;
-  min-height: 100vh;
-
+html,
+body {
+  height: 100%;
+  overflow-x: hidden; /* Désactive le défilement horizontal */
+  width: 100%; /* S'assure que la largeur est à 100% */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0;
   background-color: #000;
   color: rgb(248, 207, 2);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+.App {
+  text-align: center;
+  min-height: 100%;
+  width: 100%;
+  background-color: #000;
+  border: red 1px solid;
+  /* color: rgb(248, 207, 2); */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.review-carousel {
+  width: 100vw;
+  background-color: #000;
+  margin: 0;
+  padding: 0 5rem;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,11 +59,11 @@
   color: #61dafb;
 }
 
-/* .navbar {
+.navbar {
   background-color: #000;
 
   color: rgb(248, 207, 2);
-} */
+}
 
 .navbar a,
 .navbar span {
