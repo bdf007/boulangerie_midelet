@@ -83,7 +83,7 @@ const NavBar = () => {
             {!user ? (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/AboutPublic">
+                  <Link className="nav-link" to="/About">
                     A propos
                   </Link>
                 </li>
